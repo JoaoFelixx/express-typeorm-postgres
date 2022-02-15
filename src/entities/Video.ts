@@ -10,7 +10,7 @@ import { randomUUID as uuid } from 'crypto';
 import { Category } from './Category';
 
 @Entity('videos')
-class Video {
+export class Video {
 
 	@PrimaryColumn()
 	id: string;
@@ -35,8 +35,8 @@ class Video {
 	createdAt: Date;
 
 	constructor() {
-		if (!this.id) this.id = uuid()
+		if (!this.id) { 
+			this.id = uuid()
+		}
 	}
 }
-
-export default Category;
