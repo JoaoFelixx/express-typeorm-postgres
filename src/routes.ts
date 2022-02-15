@@ -10,12 +10,12 @@ import {
 
 const routes = Router();
 
-routes.get('/categories', getAllVideosController)
+routes.get('/categories', getAllCategoriesController)
 routes.put('/categories/:id', updateCategoryController)
 routes.post('/categories', createCategoryController)
 routes.delete('/categories/:id', deleteCategoryController)
 
 routes.post('/videos', createVideoController)
-routes.get('/videos', getAllCategoriesController)
+routes.get('/videos', getAllVideosController)
 
 export default routes
