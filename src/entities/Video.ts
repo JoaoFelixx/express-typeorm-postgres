@@ -1,9 +1,9 @@
-import { 
-	Entity, 
-	Column, 
-	CreateDateColumn, 
-	PrimaryColumn, 
-	ManyToOne, 
+import {
+	Entity,
+	Column,
+	CreateDateColumn,
+	PrimaryColumn,
+	ManyToOne,
 	JoinColumn,
 } from 'typeorm';
 import { randomUUID as uuid } from 'crypto';
@@ -14,10 +14,10 @@ export class Video {
 
 	@PrimaryColumn()
 	id: string;
-	
+
 	@Column()
 	name: string;
-	
+
 	@Column()
 	description: string;
 
@@ -35,8 +35,6 @@ export class Video {
 	createdAt: Date;
 
 	constructor() {
-		if (!this.id) { 
-			this.id = uuid()
-		}
+		if (!this.id) this.id = uuid()
 	}
 }

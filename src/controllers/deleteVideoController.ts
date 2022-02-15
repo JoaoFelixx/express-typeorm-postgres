@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import { DeleteCategoryService } from '../services/DeleteCategoryService';
 
-export class DeleteCategoryController {
-	static async handle(request: Request, response: Response) {
+export async function deleteCategoryController(request: Request, response: Response) {
+	try {
 		const { id } = request.params;
 
 		const service = new DeleteCategoryService();
@@ -12,5 +12,7 @@ export class DeleteCategoryController {
 		if (result instanceof Error) return response.status(204).json(result.message);
 
 		return response.sendStatus(204)
-	} 
+	} catch (err) {
+		return response.sendStatus(400)
+	}
 }

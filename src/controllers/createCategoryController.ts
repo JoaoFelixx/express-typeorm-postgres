@@ -13,7 +13,6 @@ export async function createCategoryController(request: Request, response: Respo
 
 		return response.status(201).json(result)
 	} catch (err) {
-		console.log(err);
 		return response.sendStatus(400)
 	}
 }

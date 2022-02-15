@@ -23,7 +23,6 @@ export async function createVideoController(request: Request, response: Response
 
 		return response.status(201).json(result)
 	} catch (err) {
-		console.log(err);
 		return response.sendStatus(400)
 	}
 }

@@ -1,19 +1,21 @@
 import { Router } from 'express';
-import { createCategoryController } from './controllers/CreateCategoryController';
-import { GetAllCategoriesController } from './controllers/GetAllCategoriesController';
-import { DeleteCategoryController } from './controllers/DeleteCategoryController';
-import { UpdateCategoryController } from './controllers/UpdateCategoryController';
-import { createVideoController } from './controllers/CreateVideoController';
-import { GetAllVideosController } from './controllers/GetAllVideosController';
+import {
+  createVideoController,
+  getAllVideosController,
+  deleteCategoryController,
+  updateCategoryController,
+  createCategoryController,
+  getAllCategoriesController,
+} from './controllers';
 
 const routes = Router();
 
-routes.get('/categories', GetAllCategoriesController.handle)
-routes.put('/categories/:id', UpdateCategoryController.handle)
+routes.get('/categories', getAllVideosController)
+routes.put('/categories/:id', updateCategoryController)
 routes.post('/categories', createCategoryController)
-routes.delete('/categories/:id', DeleteCategoryController.handle)
+routes.delete('/categories/:id', deleteCategoryController)
 
 routes.post('/videos', createVideoController)
-routes.get('/videos', GetAllVideosController.handle)
+routes.get('/videos', getAllCategoriesController)
 
 export default routes
